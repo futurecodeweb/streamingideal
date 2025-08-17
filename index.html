@@ -475,7 +475,24 @@
             background-color: #ccc;
             cursor: not-allowed;
         }
-
+        /* Botón de pagos dentro del carrito */
+        .cart-payment-button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 5px;
+        }
+        .cart-payment-button:hover {
+            background-color: #2980b9;
+        }
+        .cart-payment-button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
         /* Notificaciones */
         #notification-message {
             position: fixed;
@@ -498,8 +515,9 @@
 
         /* Métodos de pago */
         .payment-methods-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 15px;
             margin-top: 20px;
         }
@@ -510,7 +528,9 @@
             border-radius: 8px;
             text-align: center;
             font-weight: bold;
-            transition: transform 0.2s;
+            transition: transform 0.2s, background-color 0.2s;
+            cursor: pointer;
+            width: 120px;
         }
         .payment-method-card:hover {
             transform: scale(1.05);
@@ -522,6 +542,60 @@
         .payment-method-card p {
             margin: 0;
             font-size: 0.9em;
+        }
+        .payment-method-card.selected {
+            border: 3px solid #f39c12;
+            box-shadow: 0 0 15px rgba(243, 156, 18, 0.5);
+            transform: scale(1.05);
+        }
+
+        /* Colores específicos para los métodos de pago */
+        .payment-card-mobile { background-color: #2c3e50; }
+        .payment-card-paypal { background-color: #0070ba; }
+        .payment-card-binance { background-color: #f39c12; }
+        .payment-card-wally { background-color: #556ee6; }
+        .payment-card-zinli { background-color: #4b89ea; }
+        
+        /* Modal de Redes Sociales mejorado */
+        .social-menu-modal .modal-content {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        .social-menu-modal h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+        .social-links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 1.1em;
+            text-decoration: none;
+            color: white;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .social-link i {
+            margin-right: 10px;
+        }
+        .instagram-link {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+        }
+        .facebook-link {
+            background: linear-gradient(45deg, #3b5998, #2d4373);
+        }
+        .social-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
         /* Detalles del producto */
@@ -713,9 +787,6 @@
         <a href="#" class="fixed-button social-button" id="social-button" onclick="toggleSocialMenu()">
             <i class="fas fa-share-alt"></i> Redes
         </a>
-        <a href="#" class="fixed-button payment-button" id="payment-button" onclick="togglePaymentMethods()">
-            <i class="fas fa-wallet"></i> Pagos
-        </a>
     </header>
 
     <div class="search-bar">
@@ -751,6 +822,7 @@
             </div>
             <div class="cart-buttons">
                 <button id="clear-cart-button" onclick="clearCart()" disabled>Vaciar Carrito</button>
+                <button class="cart-payment-button" id="select-payment-button" onclick="togglePaymentMethods()" disabled>Seleccionar Método de Pago</button>
                 <a id="whatsapp-button" href="#" target="_blank" class="disabled">
                     <i class="fab fa-whatsapp"></i>ㅤCompletar pago
                 </a>
@@ -762,12 +834,14 @@
         <div class="modal-content social-modal-content">
             <span class="close-button" onclick="closeSocialMenu()">&times;</span>
             <h2>Síguenos en nuestras redes</h2>
-            <a href="URL_DE_TU_INSTAGRAM" target="_blank" class="social-link instagram-link">
-                <i class="fab fa-instagram"></i> Instagram
-            </a>
-            <a href="URL_DE_TU_FACEBOOK" target="_blank" class="social-link facebook-link">
-                <i class="fab fa-facebook-f"></i> Facebook
-            </a>
+            <div class="social-links-container">
+                <a href="URL_DE_TU_INSTAGRAM" target="_blank" class="social-link instagram-link">
+                    <i class="fab fa-instagram"></i> Instagram
+                </a>
+                <a href="URL_DE_TU_FACEBOOK" target="_blank" class="social-link facebook-link">
+                    <i class="fab fa-facebook-f"></i> Facebook
+                </a>
+            </div>
         </div>
     </div>
 
@@ -776,23 +850,23 @@
             <span class="close-button" onclick="closePaymentMethods()">&times;</span>
             <h2>Métodos de Pago</h2>
             <div class="payment-methods-container">
-                <div class="payment-method-card">
+                <div class="payment-method-card payment-card-mobile" data-method="Pago Móvil" onclick="selectPaymentMethod(this)">
                     <i class="fas fa-mobile-alt"></i>
                     <p>Pago Móvil</p>
                 </div>
-                <div class="payment-method-card">
+                <div class="payment-method-card payment-card-paypal" data-method="PayPal" onclick="selectPaymentMethod(this)">
                     <i class="fab fa-paypal"></i>
                     <p>PayPal</p>
                 </div>
-                <div class="payment-method-card">
+                <div class="payment-method-card payment-card-binance" data-method="Binance" onclick="selectPaymentMethod(this)">
                     <i class="fas fa-coins"></i>
                     <p>Binance</p>
                 </div>
-                <div class="payment-method-card">
+                <div class="payment-method-card payment-card-wally" data-method="Wally" onclick="selectPaymentMethod(this)">
                     <i class="fas fa-wallet"></i>
                     <p>Wally</p>
                 </div>
-                <div class="payment-method-card">
+                <div class="payment-method-card payment-card-zinli" data-method="Zinli" onclick="selectPaymentMethod(this)">
                     <i class="fas fa-credit-card"></i>
                     <p>Zinli</p>
                 </div>
@@ -840,6 +914,7 @@
             let products = [];
             const whatsappNumber = '584129386149';
             let cart = [];
+            let selectedPaymentMethod = '';
 
             let currentSlide = 0;
             const tmdbApiKey = '65aa5b7946592f4674d9d2115569d584';
@@ -850,7 +925,7 @@
             const fetchDollarRate = async () => {
                 try {
                     const version = new Date().getTime();
-                    const tasaUrl = `https://nexuswebcode.github.io/tasabcv/?v=${version}`;
+                    const tasaUrl = `https://futurecodeweb.github.io/tasabcv/?v=${version}`;
                     const response = await fetch(tasaUrl);
                     const htmlText = await response.text();
                     const parser = new DOMParser();
@@ -981,6 +1056,7 @@
 
             const clearCart = () => {
                 cart = [];
+                selectedPaymentMethod = '';
                 saveCartToStorage();
                 updateCartUI();
                 showNotification('El carrito ha sido vaciado.');
@@ -990,6 +1066,8 @@
                 const cartItemsList = document.getElementById('cart-items');
                 const whatsappButton = document.getElementById('whatsapp-button');
                 const clearCartButton = document.getElementById('clear-cart-button');
+                const selectPaymentButton = document.getElementById('select-payment-button');
+
                 cartItemsList.innerHTML = '';
                 let totalUSD = 0;
                 let totalItems = 0;
@@ -998,9 +1076,11 @@
                     cartItemsList.innerHTML = '<li>El carrito está vacío.</li>';
                     whatsappButton.classList.add('disabled');
                     clearCartButton.disabled = true;
+                    selectPaymentButton.disabled = true;
                 } else {
                     whatsappButton.classList.remove('disabled');
                     clearCartButton.disabled = false;
+                    selectPaymentButton.disabled = false;
                     cart.forEach(item => {
                         const li = document.createElement('li');
                         const subtotalUSD = item.usdPrice * item.quantity;
@@ -1050,12 +1130,14 @@
 
             const prepareWhatsappLink = () => {
                 const whatsappButton = document.getElementById('whatsapp-button');
-                if (cart.length > 0) {
+                if (cart.length > 0 && selectedPaymentMethod) {
                     const message = generateWhatsappMessage();
                     const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
                     whatsappButton.href = url;
+                    whatsappButton.classList.remove('disabled');
                 } else {
                     whatsappButton.href = '#';
+                    whatsappButton.classList.add('disabled');
                 }
             };
 
@@ -1071,8 +1153,19 @@
                 });
                 const totalBS = (totalUSD * dollarRate).toFixed(2);
                 message += `\nTotal: $${totalUSD.toFixed(2)} (Bs ${totalBS})`;
+                message += `\n\nMétodo de pago: ${selectedPaymentMethod}`;
                 message += `\n\nPor favor, indícame los pasos para completar la compra.`;
                 return message;
+            };
+
+            const selectPaymentMethod = (card) => {
+                const allCards = document.querySelectorAll('.payment-method-card');
+                allCards.forEach(c => c.classList.remove('selected'));
+                card.classList.add('selected');
+                selectedPaymentMethod = card.getAttribute('data-method');
+                closePaymentMethods();
+                prepareWhatsappLink();
+                showNotification(`Método de pago seleccionado: ${selectedPaymentMethod}`);
             };
 
             const closeSplashScreen = () => {
@@ -1189,7 +1282,6 @@
                 }
             };
 
-            // ---- INICIO DE LA FUNCIÓN MODIFICADA ----
             const getMovieSynopsis = async (movieId) => {
                 const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${tmdbApiKey}&language=es-MX`;
                 try {
@@ -1204,7 +1296,6 @@
                     return null;
                 }
             };
-            // ---- FIN DE LA FUNCIÓN MODIFICADA ----
 
             const closeSynopsis = () => {
                 document.getElementById('synopsis-modal').style.display = 'none';
@@ -1251,6 +1342,7 @@
             window.showTrailer = showTrailer;
             window.closeTrailer = closeTrailer;
             window.showMoviesCatalog = showMoviesCatalog;
+            window.selectPaymentMethod = selectPaymentMethod;
 
             loadCartFromStorage();
             fetchProducts();
