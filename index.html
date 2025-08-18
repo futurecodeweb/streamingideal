@@ -815,7 +815,7 @@
     <div id="splash-screen">
         <div class="splash-image-container">
             <img src="https://i.imgur.com/cBE1s62.png" alt="Imagen de Bienvenida">
-            <button class="close-splash" onclick="closeSplashScreen()">
+            <button class="close-splash" onclick="window.closeSplashScreen()">
                 <i class="fas fa-times"></i>
             </button>
         </div>
@@ -826,16 +826,16 @@
     <header class="header">
         <h1>ㅤ</h1>
         <p>ㅤ</p>
-        <a href="#" class="fixed-button cart-button" id="cart-button" onclick="showCart()">
+        <a href="#" class="fixed-button cart-button" id="cart-button" onclick="window.showCart()">
             <i class="fas fa-shopping-cart"></i> Carrito (<span id="cart-count">0</span>)
         </a>
-        <a href="#" class="fixed-button social-button" id="social-button" onclick="toggleSocialMenu()">
+        <a href="#" class="fixed-button social-button" id="social-button" onclick="window.toggleSocialMenu()">
             <i class="fas fa-share-alt"></i> Redes
         </a>
     </header>
 
     <div class="search-bar">
-        <input type="text" id="search-input" placeholder="Buscar productos..." onkeyup="filterProducts(event)">
+        <input type="text" id="search-input" placeholder="Buscar productos..." onkeyup="window.filterProducts(event)">
         <i class="fas fa-search search-icon"></i>
         <ul class="search-suggestions" id="search-suggestions"></ul>
     </div>
@@ -852,7 +852,7 @@
         <p>2025 - Streaming Ideal &copy;</p>
         <p>Developed by: Nexus Web Code &copy;</p>
         <p>Todos los derechos reservados.</p>
-        <a href="#" class="fixed-button movies-button invisible" id="movies-button" onclick="showMoviesCatalog()">
+        <a href="#" class="fixed-button movies-button invisible" id="movies-button" onclick="window.showMoviesCatalog()">
             <i class="fas fa-film"></i> Qué ver
         </a>
     </footer>
@@ -866,8 +866,8 @@
                 Total: $ <span id="cart-total-usd">0.00</span> (Bs <span id="cart-total-bs">0.00</span>)
             </div>
             <div class="cart-buttons">
-                <button id="clear-cart-button" onclick="clearCart()" disabled>Vaciar Carrito</button>
-                <button class="cart-payment-button" id="select-payment-button" onclick="togglePaymentMethods()" disabled>Seleccionar Método de Pago</button>
+                <button id="clear-cart-button" onclick="window.clearCart()" disabled>Vaciar Carrito</button>
+                <button class="cart-payment-button" id="select-payment-button" onclick="window.togglePaymentMethods()" disabled>Seleccionar Método de Pago</button>
                 <a id="whatsapp-button" href="#" target="_blank" class="disabled">
                     <i class="fab fa-whatsapp"></i>ㅤCompletar pago
                 </a>
@@ -877,7 +877,7 @@
 
     <div id="social-menu" class="modal social-menu-modal">
         <div class="modal-content social-modal-content">
-            <span class="close-button" onclick="closeSocialMenu()">&times;</span>
+            <span class="close-button" onclick="window.closeSocialMenu()">&times;</span>
             <h2>Síguenos en nuestras redes</h2>
             <div class="social-links-container">
                 <a href="URL_DE_TU_INSTAGRAM" target="_blank" class="social-link instagram-link">
@@ -892,26 +892,26 @@
 
     <div id="payment-methods-modal" class="modal payment-methods-modal">
         <div class="modal-content">
-            <span class="close-button" onclick="closePaymentMethods()">&times;</span>
+            <span class="close-button" onclick="window.closePaymentMethods()">&times;</span>
             <h2>Métodos de Pago</h2>
             <div class="payment-methods-container">
-                <div class="payment-method-card payment-card-mobile" data-method="Pago Móvil" onclick="selectPaymentMethod(this)">
+                <div class="payment-method-card payment-card-mobile" data-method="Pago Móvil" onclick="window.selectPaymentMethod(this)">
                     <i class="fas fa-mobile-alt"></i>
                     <p>Pago Móvil</p>
                 </div>
-                <div class="payment-method-card payment-card-paypal" data-method="PayPal" onclick="selectPaymentMethod(this)">
+                <div class="payment-method-card payment-card-paypal" data-method="PayPal" onclick="window.selectPaymentMethod(this)">
                     <i class="fab fa-paypal"></i>
                     <p>PayPal</p>
                 </div>
-                <div class="payment-method-card payment-card-binance" data-method="Binance" onclick="selectPaymentMethod(this)">
+                <div class="payment-method-card payment-card-binance" data-method="Binance" onclick="window.selectPaymentMethod(this)">
                     <i class="fas fa-coins"></i>
                     <p>Binance</p>
                 </div>
-                <div class="payment-method-card payment-card-wally" data-method="Wally" onclick="selectPaymentMethod(this)">
+                <div class="payment-method-card payment-card-wally" data-method="Wally" onclick="window.selectPaymentMethod(this)">
                     <i class="fas fa-wallet"></i>
                     <p>Wally</p>
                 </div>
-                <div class="payment-method-card payment-card-zinli" data-method="Zinli" onclick="selectPaymentMethod(this)">
+                <div class="payment-method-card payment-card-zinli" data-method="Zinli" onclick="window.selectPaymentMethod(this)">
                     <i class="fas fa-credit-card"></i>
                     <p>Zinli</p>
                 </div>
@@ -921,20 +921,20 @@
 
     <div id="suggestions-modal" class="modal">
         <div class="modal-content movies-catalog-content">
-            <span class="close-button" onclick="closeSuggestionsModal()">&times;</span>
+            <span class="close-button" onclick="window.closeSuggestionsModal()">&times;</span>
             <h2 id="suggestions-title">Sugerencias</h2>
             <div class="carousel-container">
-                <button class="carousel-nav prev" onclick="changeSlide(-1)">&#10094;</button>
+                <button class="carousel-nav prev" onclick="window.changeSlide(-1)">&#10094;</button>
                 <div class="carousel-slides" id="suggestions-carousel-slides">
                 </div>
-                <button class="carousel-nav next" onclick="changeSlide(1)">&#10095;</button>
+                <button class="carousel-nav next" onclick="window.changeSlide(1)">&#10095;</button>
             </div>
         </div>
     </div>
 
     <div id="synopsis-modal" class="modal">
         <div class="modal-content synopsis-content">
-            <span class="close-button" onclick="closeSynopsis()">&times;</span>
+            <span class="close-button" onclick="window.closeSynopsis()">&times;</span>
             <div id="synopsis-content-wrapper">
                 <h3 id="synopsis-title"></h3>
                 <p id="synopsis-text"></p>
@@ -944,7 +944,7 @@
 
     <div id="trailer-modal" class="modal">
         <div class="modal-content">
-            <span class="close-button" onclick="closeTrailer()">&times;</span>
+            <span class="close-button" onclick="window.closeTrailer()">&times;</span>
             <h2 id="trailer-title"></h2>
             <div class="video-container">
                 <iframe id="youtube-player" width="100%" height="315" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -954,7 +954,7 @@
 
     <div id="pricing-modal" class="modal">
         <div class="modal-content">
-            <span class="close-button" onclick="closePricingModal()">&times;</span>
+            <span class="close-button" onclick="window.closePricingModal()">&times;</span>
             <h2 id="pricing-modal-title">Selecciona el saldo de tu Giftcard</h2>
             <p id="pricing-modal-product-name"></p>
             <div id="pricing-options-container" class="pricing-options-container"></div>
@@ -967,7 +967,7 @@
 
     <div id="product-details-modal" class="modal">
         <div class="modal-content">
-            <span class="close-button" onclick="closeProductDetailsModal()">&times;</span>
+            <span class="close-button" onclick="window.closeProductDetailsModal()">&times;</span>
             <h2 id="details-product-name"></h2>
             <img id="details-product-img" src="" alt="Imagen del producto">
             <p id="details-product-description"></p>
@@ -993,16 +993,15 @@
             const fetchDollarRate = async () => {
                 try {
                     const version = new Date().getTime();
-                    const tasaUrl = `https://streamingideal.github.io/tasabcv/?v=${version}`;
+                    const tasaUrl = `https://pydolarvenezuela-api.vercel.app/api/v1/dollar/bcv?v=${version}`;
                     const response = await fetch(tasaUrl);
-                    const htmlText = await response.text();
-                    const parser = new DOMParser();
-                    const doc = parser.parseFromString(htmlText, 'text/html');
-                    const rateElement = doc.getElementById('tasa-bcv-valor');
-                    if (rateElement) {
-                        const rate = parseFloat(rateElement.innerText.replace(',', '.'));
-                        if (!isNaN(rate)) {
-                            dollarRate = rate;
+                    if (!response.ok) {
+                        throw new Error(`Error al cargar la tasa: ${response.status}`);
+                    }
+                    const data = await response.json();
+                    if (data && data.price) {
+                        dollarRate = parseFloat(data.price);
+                        if (!isNaN(dollarRate)) {
                             document.getElementById('dollar-rate-display').innerText = dollarRate.toFixed(2);
                             updatePrices();
                         } else {
@@ -1010,7 +1009,7 @@
                             document.getElementById('dollar-rate-display').innerText = 'Error al cargar';
                         }
                     } else {
-                        console.error('No se encontró el elemento con el ID "tasa-bcv-valor".');
+                        console.error('No se encontró el valor de la tasa en la respuesta de la API.');
                         document.getElementById('dollar-rate-display').innerText = 'No disponible';
                     }
                 } catch (error) {
@@ -1050,7 +1049,8 @@
                     const bsPrice = product.usdPrice ? (product.usdPrice * dollarRate).toFixed(2) : '0.00';
 
                     const buttonText = product.productType === 'giftcard' ? 'Detalles' : 'Sugerencias';
-                    const buttonAction = product.productType === 'giftcard' ? `showProductDetailsModal(${product.id})` : `showSuggestionsModal('${product.name}')`;
+                    const buttonAction = product.productType === 'giftcard' ? `window.showProductDetailsModal(${product.id})` : `window.showSuggestionsModal('${product.name}')`;
+                    const suggestionsButtonDisabled = product.productType === 'streaming' && (!product.suggestions || product.suggestions.length === 0);
 
                     productDiv.innerHTML = `
                         <img src="${product.imgUrl}" alt="${product.name}">
@@ -1059,8 +1059,8 @@
                         <p class="price" data-usd-price="${product.usdPrice}">${product.stock ? priceToDisplay : 'SIN STOCK'}</p>
                         <p class="price-bs">Bs <span id="price-bs-${product.id}">${bsPrice}</span></p>
                         <div class="product-buttons">
-                            <button class="add-to-cart-button" onclick="handleAddToCart(${product.id})" ${product.stock ? '' : 'disabled'}>Añadir al carrito</button>
-                            <button class="view-details-button" onclick="${buttonAction}" ${product.stock ? '' : 'disabled'}>${buttonText}</button>
+                            <button class="add-to-cart-button" onclick="window.handleAddToCart(${product.id})" ${product.stock ? '' : 'disabled'}>Añadir al carrito</button>
+                            <button class="view-details-button" onclick="${buttonAction}" ${product.stock && !suggestionsButtonDisabled ? '' : 'disabled'}>${buttonText}</button>
                         </div>
                     `;
                     productContainer.appendChild(productDiv);
@@ -1071,13 +1071,12 @@
                 products.forEach(product => {
                     const bsPriceElement = document.getElementById(`price-bs-${product.id}`);
                     if (bsPriceElement) {
-                        if (product.usdPrice) {
-                            bsPriceElement.innerText = (product.usdPrice * dollarRate).toFixed(2);
-                        } else {
-                            // Para giftcards, mostrar un rango de precios
+                        if (product.productType === 'giftcard') {
                             const minPrice = product.pricingOptions.length > 0 ? product.pricingOptions[0].realPrice : 0;
                             const minBsPrice = (minPrice * dollarRate).toFixed(2);
                             bsPriceElement.innerText = minBsPrice;
+                        } else {
+                            bsPriceElement.innerText = (product.usdPrice * dollarRate).toFixed(2);
                         }
                     }
                 });
@@ -1108,32 +1107,37 @@
             window.handleAddToCart = (productId) => {
                 const product = products.find(p => p.id === productId);
                 if (product && product.productType === 'giftcard') {
-                    showPricingModal(product);
+                    window.showPricingModal(product);
                 } else {
-                    addToCart(productId);
+                    window.addToCart(productId);
                 }
             };
 
             window.addToCart = (productId, price = null, description = null) => {
                 const product = products.find(p => p.id === productId);
                 if (product && product.stock) {
-                    const newItem = { 
-                        ...product, 
-                        quantity: 1, 
-                        usdPrice: price || product.usdPrice,
-                        description: description || product.description
-                    };
-                    cart.push(newItem);
+                    const existingItem = cart.find(item => item.id === productId && (item.description === description || !description));
+                    if (existingItem) {
+                        existingItem.quantity++;
+                    } else {
+                        const newItem = { 
+                            ...product, 
+                            quantity: 1, 
+                            usdPrice: price || product.usdPrice,
+                            description: description || product.description
+                        };
+                        cart.push(newItem);
+                    }
                     saveCartToStorage();
                     updateCartUI();
-                    showNotification(`${newItem.name} ha sido añadido al carrito.`);
+                    showNotification(`${product.name} ha sido añadido al carrito.`);
                     launchConfetti();
                 } else if (product && !product.stock) {
                     showNotification(`${product.name} no está disponible actualmente.`);
                 }
             };
 
-            const updateCartItemQuantity = (productId, change) => {
+            window.updateCartItemQuantity = (productId, change) => {
                 const item = cart.find(p => p.id === productId);
                 if (item) {
                     item.quantity += change;
@@ -1145,7 +1149,7 @@
                 }
             };
 
-            const clearCart = () => {
+            window.clearCart = () => {
                 cart = [];
                 selectedPaymentMethod = '';
                 saveCartToStorage();
@@ -1182,9 +1186,9 @@
                                 <span class="item-price">$${subtotalUSD.toFixed(2)} (Bs ${subtotalBS})</span>
                             </div>
                             <div class="quantity-control">
-                                <button onclick="updateCartItemQuantity(${item.id}, -1)">-</button>
+                                <button onclick="window.updateCartItemQuantity(${item.id}, -1)">-</button>
                                 <span>${item.quantity}</span>
-                                <button onclick="updateCartItemQuantity(${item.id}, 1)">+</button>
+                                <button onclick="window.updateCartItemQuantity(${item.id}, 1)">+</button>
                             </div>
                         `;
                         cartItemsList.appendChild(li);
@@ -1211,11 +1215,11 @@
                 }
             };
 
-            const showCart = () => {
+            window.showCart = () => {
                 document.getElementById('cart-modal').style.display = 'block';
             };
 
-            const closeCart = () => {
+            window.closeCart = () => {
                 document.getElementById('cart-modal').style.display = 'none';
             };
 
@@ -1249,17 +1253,17 @@
                 return message;
             };
 
-            const selectPaymentMethod = (card) => {
+            window.selectPaymentMethod = (card) => {
                 const allCards = document.querySelectorAll('.payment-method-card');
                 allCards.forEach(c => c.classList.remove('selected'));
                 card.classList.add('selected');
                 selectedPaymentMethod = card.getAttribute('data-method');
-                closePaymentMethods();
+                window.closePaymentMethods();
                 prepareWhatsappLink();
                 showNotification(`Método de pago seleccionado: ${selectedPaymentMethod}`);
             };
 
-            const closeSplashScreen = () => {
+            window.closeSplashScreen = () => {
                 document.getElementById('splash-screen').style.display = 'none';
             };
 
@@ -1272,21 +1276,21 @@
                 }, 3000);
             };
 
-            const toggleSocialMenu = () => {
+            window.toggleSocialMenu = () => {
                 const socialMenu = document.getElementById('social-menu');
                 socialMenu.style.display = socialMenu.style.display === 'block' ? 'none' : 'block';
             };
 
-            const closeSocialMenu = () => {
+            window.closeSocialMenu = () => {
                 document.getElementById('social-menu').style.display = 'none';
             };
 
-            const togglePaymentMethods = () => {
+            window.togglePaymentMethods = () => {
                 const paymentModal = document.getElementById('payment-methods-modal');
                 paymentModal.style.display = paymentModal.style.display === 'block' ? 'none' : 'block';
             };
 
-            const closePaymentMethods = () => {
+            window.closePaymentMethods = () => {
                 document.getElementById('payment-methods-modal').style.display = 'none';
             };
 
@@ -1313,7 +1317,7 @@
                 const modal = document.getElementById('suggestions-modal');
                 const title = document.getElementById('suggestions-title');
                 const product = products.find(p => p.name === serviceName);
-                if (!product || !product.suggestions) {
+                if (!product || !product.suggestions || product.suggestions.length === 0) {
                     console.error("No se encontraron sugerencias para este servicio.");
                     return;
                 }
@@ -1323,7 +1327,7 @@
                 toggleFixedButtons(false);
             };
 
-            const closeSuggestionsModal = () => {
+            window.closeSuggestionsModal = () => {
                 document.getElementById('suggestions-modal').style.display = 'none';
                 toggleFixedButtons(true);
                 currentSlide = 0;
@@ -1340,15 +1344,15 @@
                             <img src="${movie.imgUrl}" alt="${movie.title}">
                         </div>
                         <div class="synopsis-buttons">
-                            <button class="synopsis-button" onclick="showSynopsis(${movie.id}, '${movie.title}')">Sinopsis</button>
-                            <button class="trailer-button" onclick="showTrailer('${movie.title}', '${movie.trailerUrl}')">Tráiler</button>
+                            <button class="synopsis-button" onclick="window.showSynopsis(${movie.id}, '${movie.title.replace(/'/g, "\\'")}')">Sinopsis</button>
+                            <button class="trailer-button" onclick="window.showTrailer('${movie.title.replace(/'/g, "\\'")}', '${movie.trailerUrl}')">Tráiler</button>
                         </div>
                     `;
                     carouselContainer.appendChild(slide);
                 });
             };
 
-            const changeSlide = (direction) => {
+            window.changeSlide = (direction) => {
                 const slides = document.querySelectorAll('#suggestions-carousel-slides .carousel-slide');
                 currentSlide = (currentSlide + direction + slides.length) % slides.length;
                 document.getElementById('suggestions-carousel-slides').style.transform = `translateX(-${currentSlide * 100}%)`;
@@ -1388,7 +1392,7 @@
                 }
             };
 
-            const closeSynopsis = () => {
+            window.closeSynopsis = () => {
                 document.getElementById('synopsis-modal').style.display = 'none';
             };
 
@@ -1401,14 +1405,14 @@
                 trailerModal.style.display = 'block';
             };
 
-            const closeTrailer = () => {
+            window.closeTrailer = () => {
                 const trailerModal = document.getElementById('trailer-modal');
                 const youtubePlayer = document.getElementById('youtube-player');
                 youtubePlayer.src = '';
                 trailerModal.style.display = 'none';
             };
 
-            const showMoviesCatalog = () => {};
+            window.showMoviesCatalog = () => {};
 
             window.showProductDetailsModal = (productId) => {
                 const product = products.find(p => p.id === productId);
@@ -1458,8 +1462,8 @@
 
                 confirmButton.onclick = () => {
                     if (selectedGiftcardOption) {
-                        addToCart(product.id, selectedGiftcardOption.realPrice, `Giftcard de $${selectedGiftcardOption.value}`);
-                        closePricingModal();
+                        window.addToCart(product.id, selectedGiftcardOption.realPrice, `Giftcard de $${selectedGiftcardOption.value}`);
+                        window.closePricingModal();
                     }
                 };
 
@@ -1470,61 +1474,48 @@
                 document.getElementById('pricing-modal').style.display = 'none';
             };
 
-            window.closeSplashScreen = closeSplashScreen;
-            window.showCart = showCart;
-            window.closeCart = closeCart;
-            window.toggleSocialMenu = toggleSocialMenu;
-            window.closeSocialMenu = closeSocialMenu;
-            window.togglePaymentMethods = togglePaymentMethods;
-            window.closePaymentMethods = closePaymentMethods;
-            window.updateCartItemQuantity = updateCartItemQuantity;
-            window.clearCart = clearCart;
-            window.filterProducts = filterProducts;
-            window.showMoviesCatalog = showMoviesCatalog;
-            window.selectPaymentMethod = selectPaymentMethod;
-
             loadCartFromStorage();
             fetchProducts();
 
-            document.getElementById('close-cart-modal').addEventListener('click', closeCart);
+            document.getElementById('close-cart-modal').addEventListener('click', window.closeCart);
             document.getElementById('cart-modal').addEventListener('click', (e) => {
                 if (e.target.id === 'cart-modal') {
-                    closeCart();
+                    window.closeCart();
                 }
             });
             document.getElementById('social-menu').addEventListener('click', (e) => {
                 if (e.target.id === 'social-menu') {
-                    closeSocialMenu();
+                    window.closeSocialMenu();
                 }
             });
             document.getElementById('payment-methods-modal').addEventListener('click', (e) => {
                 if (e.target.id === 'payment-methods-modal') {
-                    closePaymentMethods();
+                    window.closePaymentMethods();
                 }
             });
             document.getElementById('suggestions-modal').addEventListener('click', (e) => {
                 if (e.target.id === 'suggestions-modal') {
-                    closeSuggestionsModal();
+                    window.closeSuggestionsModal();
                 }
             });
             document.getElementById('synopsis-modal').addEventListener('click', (e) => {
                 if (e.target.id === 'synopsis-modal') {
-                    closeSynopsis();
+                    window.closeSynopsis();
                 }
             });
             document.getElementById('trailer-modal').addEventListener('click', (e) => {
                 if (e.target.id === 'trailer-modal') {
-                    closeTrailer();
+                    window.closeTrailer();
                 }
             });
             document.getElementById('product-details-modal').addEventListener('click', (e) => {
                 if (e.target.id === 'product-details-modal') {
-                    closeProductDetailsModal();
+                    window.closeProductDetailsModal();
                 }
             });
             document.getElementById('pricing-modal').addEventListener('click', (e) => {
                 if (e.target.id === 'pricing-modal') {
-                    closePricingModal();
+                    window.closePricingModal();
                 }
             });
         });
