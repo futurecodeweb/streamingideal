@@ -6,6 +6,7 @@
         "imgUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Netflix_icon.svg/1024px-Netflix_icon.svg.png",
         "description": "(Precios x 30 dias)",
         "stock": true,
+        "type": "streaming",
         "suggestions": [
             { "id": 987686, "title": "Asunto familiar", "imageUrl": "https://pics.filmaffinity.com/a_family_affair-639912317-large.jpg", "trailerUrl": "https://www.youtube.com/embed/CZEidEzNIQs?si=pNUHU6QpIn2tXHXE" },
             { "id": 229221, "title": "Mi querida niña", "imageUrl": "https://image.tmdb.org/t/p/original/dmyJoPy8iiwDKy683EjRTSiARlg.jpg", "trailerUrl": "https://www.youtube.com/embed/2OuhtUy-BGs?si=1RxOPZu5iJmYshX5" },
@@ -20,7 +21,8 @@
         "imgUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Disney_plus_icon.png",
         "description": "(Precio x 30 dias)",
         "stock": true,
-        "suggestions": [ 
+        "type": "streaming",
+        "suggestions": [
             { "id": 1022796, "title": "Deadpool & Wolverine", "imageUrl": "https://image.tmdb.org/t/p/original/6aY3OzCIdxoBMYdiH5s17rWFFFA.jpg", "trailerUrl": "https://www.youtube.com/embed/UzFZR2dRsSY?si=wrFOcYhlFV15J427" },
             { "id": 1025537, "title": "Intensamente 2", "imageUrl": "https://image.tmdb.org/t/p/original/4HEJdpcmTGm3BWWic31G4aCnuC6.jpg", "trailerUrl": "https://www.youtube.com/embed/xiC2iXTXHxw?si=gQZpFSvH2uYleFxM" },
             { "id": 260513, "title": "Los Increíbles 2", "imageUrl": "https://image.tmdb.org/t/p/original/bJjc0217DuipdwJ0wyi3I4j6soR.jpg", "trailerUrl": "https://www.youtube.com/embed/6RBr1v9_umA?si=JC6t5qgIbGHaB9QL" },
@@ -34,6 +36,7 @@
         "imgUrl": "https://childrenofthedigitalage.org/wp-content/uploads/2025/07/HBO-Max-Safety-Settings-2025.png",
         "description": "(Precio x 30 dias)",
         "stock": true,
+        "type": "streaming",
         "suggestions": [
             { "id": 238, "title": "El Padrino", "imageUrl": "https://image.tmdb.org/t/p/original/ApiEfzSkrqS4m1L5a2GwWXzIiAs.jpg", "trailerUrl": "https://www.youtube.com/embed/iOyQx7MXaz0?si=-mVmZSl1C7fFqj_2" },
             { "id": 111, "title": "El Señor de los Anillos: El Retorno del Rey", "imageUrl": "https://image.tmdb.org/t/p/original/mWuFbQrXyLk2kMBKF9TUPtDwuPx.jpg", "trailerUrl": "https://www.youtube.com/embed/5GjUcOGPHtM?si=8mn85poLRrmX_lRv" },
@@ -48,6 +51,7 @@
         "imgUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Amazon_Prime_Video_logo_%282024%29.svg/1024px-Amazon_Prime_Video_logo_%282024%29.svg.png",
         "description": "(Precios x 30 dias)",
         "stock": true,
+        "type": "streaming",
         "suggestions": [
             { "id": 843527, "title": "La idea de ti", "imageUrl": "https://image.tmdb.org/t/p/original/y1WpsgfBA5GywXIuqLm9D4aQHNd.jpg", "trailerUrl": "https://www.youtube.com/embed/t-fcs1ydbVA?si=Izeu8fr5Mo9DNMXt" },
             { "id": 872585, "title": "Oppenheimer", "imageUrl": "https://image.tmdb.org/t/p/original/5t05uhX5ULn8Um2f1ZuznVvIffU.jpg", "trailerUrl": "https://www.youtube.com/embed/gMPEbJQun68?si=pONh57Xfw2Xl542B" },
@@ -62,11 +66,12 @@
         "imgUrl": "https://logodownload.org/wp-content/uploads/2021/03/paramount-plus-logo-0.png",
         "description": "(Precios x 30 dias)",
         "stock": true,
+        "type": "streaming",
         "suggestions": [
             { "id": 27205, "title": "Inception", "imageUrl": "https://image.tmdb.org/t/p/original/tXQvtRWfkUUnWJAn2tN3jERIUG.jpg", "trailerUrl": "https://www.youtube.com/embed/RV9L7ui9Cn8?si=PI_ZgMqj2Z7ewDrk" },
             { "id": 101299, "title": "Los Juegos del Hambre", "imageUrl": "https://image.tmdb.org/t/p/original/oxnKI1qiHz7xC0mNthC7dSqTcot.jpg", "trailerUrl": "https://www.youtube.com/embed/0KKwAWsh9TQ?si=KSePSCvYnIZ1qKUt" },
             { "id": 118, "title": "Titanic", "imageUrl": "https://image.tmdb.org/t/p/original/VMOt5scbGmBKDvkfHjZN6Ki54i.jpg", "trailerUrl": "https://www.youtube.com/embed/tA_qMdzvCvk?si=Oy5ZpyPOF6dOOb2O" },
-            { "id": 13, "title": "Forrest Gump", "imageUrl": "https://image.tmdb.org/t/p/original/azV6hV99lYkdhydsQbJCI6FqMl4.jpg", "trailerUrl": "https://www.youtube.com/embed/aSEPD9w_dLM?si=sR4g2VXsL-uEjI2S" }
+            { "id": 13, "title": "Forrest Gump", "imageUrl": "https://image.tmdb.org/t/p/original/azV6hV99lYkdhydsQbJ-ML4.jpg", "trailerUrl": "https://www.youtube.com/embed/aSEPD9w_dLM?si=sR4g2VXsL-uEjI2S" }
         ]
     },
     {
@@ -76,6 +81,7 @@
         "imgUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpTOsy_182EgViE_H_VWL1cslDFH-ETQWBqQ&s",
         "description": "(Precio x 30 dias)",
         "stock": false,
+        "type": "streaming",
         "suggestions": [
             { "id": 694, "title": "El Resplandor", "imageUrl": "https://image.tmdb.org/t/p/original/p9hqo2JWhBytLxskz4FBKcP2e1k.jpg", "trailerUrl": "https://www.youtube.com/embed/HEkYxS5P8bY" },
             { "id": 550, "title": "El Club de la Pelea", "imageUrl": "https://image.tmdb.org/t/p/original/fGkVDmJgrfvLtrDtYlCxwlkkSNY.jpg", "trailerUrl": "https://www.youtube.com/embed/BdJ79y9j-oE" },
@@ -90,6 +96,7 @@
         "imgUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Crunchyroll_logo_2018_vertical.png",
         "description": "(Precio x 30 dias)",
         "stock": true,
+        "type": "streaming",
         "suggestions": [
             { "id": 129, "title": "El Viaje de Chihiro", "imageUrl": "https://image.tmdb.org/t/p/original/laXrmaTRuroArSPfsGlvTbeWxVA.jpg", "trailerUrl": "https://www.youtube.com/embed/5Fgq4Osh6XQ?si=5Q-PV41WLClW7juU" },
             { "id": 149, "title": "Akira", "imageUrl": "https://image.tmdb.org/t/p/original/vjPt8HYymLOkRv82x9JwVO7M2a5.jpg", "trailerUrl": "https://www.youtube.com/embed/SQ_hhKhrABs?si=9ZmFxwakW7jzoZk8" },
@@ -104,6 +111,7 @@
         "imgUrl": "https://i.pinimg.com/736x/9e/9a/e9/9e9ae9ca207ea166c3d5c4f1ad9ffe1f.jpg",
         "description": "(Precios x 30 dias)",
         "stock": true,
+        "type": "streaming",
         "suggestions": [
             { "id": 670864, "title": "La Bamba", "imageUrl": "https://image.tmdb.org/t/p/original/fiByqrT5qqkEZKUWUdomgABPa4x.jpg", "trailerUrl": "https://www.youtube.com/embed/OaEWHrwF0fc?si=MW0HyLparlT9j_ap" },
             { "id": 1391, "title": "Y tu mamá también", "imageUrl": "https://image.tmdb.org/t/p/original/izw41PkE8y891yraO6fN1tCNmOG.jpg", "trailerUrl": "https://www.youtube.com/embed/inc0vS58ZKg?si=6BqYAeZqtJsnNJVm" },
@@ -118,6 +126,7 @@
         "imgUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/2048px-Spotify_logo_without_text.svg.png",
         "description": "(Precios x 30 dias)",
         "stock": true,
+        "type": "streaming",
         "suggestions": []
     },
     {
@@ -127,6 +136,62 @@
         "imgUrl": "https://www.pngmart.com/files/23/Canva-Logo-PNG-File.png",
         "description": "(Precio x 30 dias)",
         "stock": false,
+        "type": "streaming",
         "suggestions": []
+    },
+    {
+        "id": 11,
+        "name": "Giftcard Steam",
+        "usdPrice": 0,
+        "imgUrl": "https://store.cloudflare.steamstatic.com/public/images/gift/steamcard_500x300.png",
+        "description": "Tarjeta de regalo para juegos y software en Steam.",
+        "stock": true,
+        "type": "giftcard",
+        "amounts": [10, 20, 50],
+        "details": "Con la Giftcard de Steam, puedes recargar saldo en tu cuenta para comprar juegos, software y contenido adicional en la plataforma de PC más grande del mundo."
+    },
+    {
+        "id": 12,
+        "name": "Giftcard Play Station",
+        "usdPrice": 0,
+        "imgUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Playstation_Giftcard_Image.jpg",
+        "description": "Tarjeta de regalo para juegos y contenido de la PS Store.",
+        "stock": true,
+        "type": "giftcard",
+        "amounts": [10, 20, 50],
+        "details": "Compra juegos, complementos, suscripciones a PlayStation Plus y más en la PlayStation Store. La Giftcard es el regalo ideal para cualquier gamer."
+    },
+    {
+        "id": 13,
+        "name": "Giftcard Xbox",
+        "usdPrice": 0,
+        "imgUrl": "https://media.gamestop.com/i/gamestop/10182442/Microsoft-Xbox-Gift-Card-Digital-Code",
+        "description": "Tarjeta de regalo para juegos y aplicaciones en Xbox.",
+        "stock": true,
+        "type": "giftcard",
+        "amounts": [10, 20, 50],
+        "details": "Con la Giftcard de Xbox, puedes comprar los juegos más recientes, DLC, películas, programas de televisión y más. Es tu pase directo a la diversión."
+    },
+    {
+        "id": 14,
+        "name": "Giftcard Nintendo",
+        "usdPrice": 0,
+        "imgUrl": "https://www.nintendo.es/store/images/giftcard-hero.jpg",
+        "description": "Tarjeta de regalo para la tienda de Nintendo.",
+        "stock": true,
+        "type": "giftcard",
+        "amounts": [10, 20, 50],
+        "details": "Agrega fondos a tu cuenta de Nintendo eShop con una Giftcard. Canjea el código en tu consola Nintendo Switch para comprar juegos descargables y contenido."
+    },
+    {
+        "id": 15,
+        "name": "Giftcard Google Play",
+        "usdPrice": 0,
+        "imgUrl": "https://images.oficial.cl/11488-large_default/gift-card-google-play.jpg",
+        "description": "Tarjeta de regalo para la tienda de Google.",
+        "stock": true,
+        "type": "giftcard",
+        "amounts": [10, 20, 50],
+        "details": "Compra tus aplicaciones, juegos, películas y libros favoritos en Google Play Store. ¡Disfruta de la mejor experiencia de entretenimiento en tu dispositivo Android!"
     }
-] 
+]
