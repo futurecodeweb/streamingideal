@@ -148,17 +148,5 @@
             { "value": 50, "realPrice": 60.00 },
             { "value": 100, "realPrice": 115.00 }
         ]
-    },
-    {
-        "id": 12,
-        "name": "Canva Pro Education 1 año",
-        "usdPrice": 0,
-        "imgUrl": "https://coolboxpe.vtexassets.com/arquivos/ids/445356/FIXCAPRDU-1-12_1.jpg.jpg?v=638810365992670000",
-        "description": "¿Sirve para publicidad?: Sí, Canva Pro para educación sí sirve para fines publicitarios, ya que la licencia permite utilizar el contenido creado en Canva para materiales de marketing y promocionales. Canva Pro ofrece herramientas y recursos que facilitan la creación de contenido publicitario profesional, como anuncios para redes sociales, banners, etc.",
-        "stock": true,
-        "productType": "giftcard",
-        "pricingOptions": [
-            { "value": 8, "realPrice": 8 }
-        ]
     }
 ]
