@@ -1,189 +1,157 @@
 [
     {
-      "id": 1,
-      "name": "HBO Max",
-      "description": "Disfruta del mejor cine, series de HBO y Max Originals.",
-      "usdPrice": 7.99,
-      "stock": true,
-      "imgUrl": "https://i.imgur.com/gI2QdFq.png",
-      "type": "streaming",
-      "suggestions": [
-        {
-          "id": 9993,
-          "title": "La Casa del Dragón",
-          "trailerUrl": "https://www.youtube.com/embed/t0A6y0lP_qQ",
-          "imageUrl": "https://i.imgur.com/kH8pYlZ.jpeg"
-        },
-        {
-          "id": 1402,
-          "title": "The Walking Dead",
-          "trailerUrl": "https://www.youtube.com/embed/pQYj_pB4c_o",
-          "imageUrl": "https://i.imgur.com/k91Y7Lh.jpeg"
-        }
-      ]
+        "id": 1,
+        "name": "Netflix",
+        "usdPrice": 3.99,
+        "imgUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Netflix_icon.svg/1024px-Netflix_icon.svg.png",
+        "description": "(Precios x 30 dias)",
+        "stock": true,
+        "productType": "streaming",
+        "suggestions": [
+            { "id": 987686, "title": "Asunto familiar", "imgUrl": "https://pics.filmaffinity.com/a_family_affair-639912317-large.jpg", "trailerUrl": "https://www.youtube.com/embed/CZEidEzNIQs" },
+            { "id": 229221, "title": "Mi querida niña", "imgUrl": "https://image.tmdb.org/t/p/original/dmyJoPy8iiwDKy683EjRTSiARlg.jpg", "trailerUrl": "https://www.youtube.com/embed/2OuhtUy-BGs" },
+            { "id": 426063, "title": "Nosferatu", "imgUrl": "https://m.media-amazon.com/images/M/MV5BY2FhZGE3NmEtNWJjOC00NDI1LWFhMTQtMjcxNmQzZmEwNGIzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", "trailerUrl": "https://www.youtube.com/embed/iEbp8QMGzP0" },
+            { "id": 1104845, "title": "Plankton: La pelicula", "imgUrl": "https://i.imgur.com/H4ghC9b.jpeg", "trailerUrl": "https://www.youtube.com/embed/eU0WIo3lAoo" }
+        ]
     },
     {
-      "id": 2,
-      "name": "Netflix",
-      "description": "Series, películas y documentales para toda la familia.",
-      "usdPrice": 10.99,
-      "stock": true,
-      "imgUrl": "https://i.imgur.com/D8jK8aQ.png",
-      "type": "streaming",
-      "suggestions": [
-        {
-          "id": 84958,
-          "title": "Ahsoka",
-          "trailerUrl": "https://www.youtube.com/embed/p1wN119g2_8",
-          "imageUrl": "https://i.imgur.com/2YjY3gE.jpeg"
-        },
-        {
-          "id": 92784,
-          "title": "Loki",
-          "trailerUrl": "https://www.youtube.com/embed/v9qI2Tq9L3k",
-          "imageUrl": "https://i.imgur.com/jIuU5k2.jpeg"
-        }
-      ]
+        "id": 2,
+        "name": "Disney Plus",
+        "usdPrice": 2.5,
+        "imgUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Disney_plus_icon.png",
+        "description": "(Precio x 30 dias)",
+        "stock": true,
+        "productType": "streaming",
+        "suggestions": [ 
+            { "id": 1022796, "title": "Deadpool & Wolverine", "imgUrl": "https://image.tmdb.org/t/p/original/6aY3OzCIdxoBMYdiH5s17rWFFFA.jpg", "trailerUrl": "https://www.youtube.com/embed/UzFZR2dRsSY" },
+            { "id": 1025537, "title": "Intensamente 2", "imgUrl": "https://image.tmdb.org/t/p/original/4HEJdpcmTGm3BWWic31G4aCnuC6.jpg", "trailerUrl": "https://www.youtube.com/embed/xiC2iXTXHxw" },
+            { "id": 260513, "title": "Los Increíbles 2", "imgUrl": "https://image.tmdb.org/t/p/original/bJjc0217DuipdwJ0wyi3I4j6soR.jpg", "trailerUrl": "https://www.youtube.com/embed/6RBr1v9_umA" },
+            { "id": 299534, "title": "Vengadores: Endgame", "imgUrl": "https://image.tmdb.org/t/p/original/br6krBFpaYmCSglLBWRuhui7tPc.jpg", "trailerUrl": "https://www.youtube.com/embed/KdL8ucqi1F8" }
+        ]
     },
     {
-      "id": 3,
-      "name": "Disney Plus",
-      "description": "Hogar de Disney, Pixar, Marvel, Star Wars y National Geographic.",
-      "usdPrice": 8.99,
-      "stock": true,
-      "imgUrl": "https://i.imgur.com/qFpX67l.png",
-      "type": "streaming",
-      "suggestions": [
-        {
-          "id": 84958,
-          "title": "Ahsoka",
-          "trailerUrl": "https://www.youtube.com/embed/p1wN119g2_8",
-          "imageUrl": "https://i.imgur.com/2YjY3gE.jpeg"
-        },
-        {
-          "id": 92784,
-          "title": "Loki",
-          "trailerUrl": "https://www.youtube.com/embed/v9qI2Tq9L3k",
-          "imageUrl": "https://i.imgur.com/jIuU5k2.jpeg"
-        }
-      ]
+        "id": 3,
+        "name": "Max",
+        "usdPrice": 1.5,
+        "imgUrl": "https://childrenofthedigitalage.org/wp-content/uploads/2025/07/HBO-Max-Safety-Settings-2025.png",
+        "description": "(Precio x 30 dias)",
+        "stock": true,
+        "productType": "streaming",
+        "suggestions": [
+            { "id": 238, "title": "El Padrino", "imgUrl": "https://image.tmdb.org/t/p/original/ApiEfzSkrqS4m1L5a2GwWXzIiAs.jpg", "trailerUrl": "https://www.youtube.com/embed/iOyQx7MXaz0" },
+            { "id": 111, "title": "El Señor de los Anillos: El Retorno del Rey", "imgUrl": "https://image.tmdb.org/t/p/original/mWuFbQrXyLk2kMBKF9TUPtDwuPx.jpg", "trailerUrl": "https://www.youtube.com/embed/5GjUcOGPHtM" },
+            { "id": 12445, "title": "Harry Potter: Las reliquias de la muerte parte 2 ", "imgUrl": "https://image.tmdb.org/t/p/original/wjKy2wSlDiLLLIkM7tHnxsXG8Tp.jpg", "trailerUrl": "https://www.youtube.com/embed/HguSMW8XveQ" },
+            { "id": 259909, "title": "Dexter: Resurrecion", "imgUrl": "https://image.tmdb.org/t/p/original/9kJnJI2X6xMtX7JPtMsxO8SeB9v.jpg", "trailerUrl": "https://www.youtube.com/embed/uPXZiDRb2i8" }
+        ]
     },
     {
-      "id": 4,
-      "name": "Amazon Prime Video",
-      "description": "Miles de películas, series, originales de Amazon y más.",
-      "usdPrice": 5.99,
-      "stock": true,
-      "imgUrl": "https://i.imgur.com/h9D6s6p.png",
-      "type": "streaming",
-      "suggestions": [
-        {
-          "id": 10227,
-          "title": "The Lord of the Rings: The Rings of Power",
-          "trailerUrl": "https://www.youtube.com/embed/x8U6xM12d-4",
-          "imageUrl": "https://i.imgur.com/i9o3pX6.jpeg"
-        },
-        {
-          "id": 1399,
-          "title": "Game of Thrones",
-          "trailerUrl": "https://www.youtube.com/embed/giFjE_tE6qI",
-          "imageUrl": "https://i.imgur.com/hI2b20G.jpeg"
-        }
-      ]
+        "id": 4,
+        "name": "Prime Video",
+        "usdPrice": 2,
+        "imgUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Amazon_Prime_Video_logo_%282024%29.svg/1024px-Amazon_Prime_Video_logo_%282024%29.svg.png",
+        "description": "(Precios x 30 dias)",
+        "stock": true,
+        "productType": "streaming",
+        "suggestions": [
+            { "id": 843527, "title": "La idea de ti", "imgUrl": "https://image.tmdb.org/t/p/original/y1WpsgfBA5GywXIuqLm9D4aQHNd.jpg", "trailerUrl": "https://www.youtube.com/embed/t-fcs1ydbVA" },
+            { "id": 872585, "title": "Oppenheimer", "imgUrl": "https://image.tmdb.org/t/p/original/5t05uhX5ULn8Um2f1ZuznVvIffU.jpg", "trailerUrl": "https://www.youtube.com/embed/gMPEbJQun68" },
+            { "id": 76479, "title": "The boys", "imgUrl": "https://image.tmdb.org/t/p/original/5kgY14oisiHcJ4zq0Xgq1e97PHm.jpg", "trailerUrl": "https://www.youtube.com/embed/RzDdLdM59kw" },
+            { "id": 157336, "title": "Interestellar", "imgUrl": "https://image.tmdb.org/t/p/original/c2a7KgNATJm4bfMcTLifGJpb9rU.jpg", "trailerUrl": "https://www.youtube.com/embed/LYS2O1nl9iM" }
+        ]
     },
     {
-      "id": 5,
-      "name": "Crunchyroll",
-      "description": "Todo el anime que te gusta en un solo lugar.",
-      "usdPrice": 9.99,
-      "stock": true,
-      "imgUrl": "https://i.imgur.com/hG90v1b.png",
-      "type": "streaming",
-      "suggestions": [
-        {
-          "id": 110375,
-          "title": "The Promised Neverland",
-          "trailerUrl": "https://www.youtube.com/embed/APcIeW66Q8U",
-          "imageUrl": "https://i.imgur.com/y3yL4zZ.jpeg"
-        },
-        {
-          "id": 128148,
-          "title": "Jujutsu Kaisen",
-          "trailerUrl": "https://www.youtube.com/embed/pkE66W4Jv48",
-          "imageUrl": "https://i.imgur.com/rWqU1E2.jpeg"
-        }
-      ]
+        "id": 5,
+        "name": "Paramount Plus",
+        "usdPrice": 2,
+        "imgUrl": "https://logodownload.org/wp-content/uploads/2021/03/paramount-plus-logo-0.png",
+        "description": "(Precios x 30 dias)",
+        "stock": true,
+        "productType": "streaming",
+        "suggestions": [
+            { "id": 27205, "title": "Inception", "imgUrl": "https://image.tmdb.org/t/p/original/tXQvtRWfkUUnWJAn2tN3jERIUG.jpg", "trailerUrl": "https://www.youtube.com/embed/RV9L7ui9Cn8" },
+            { "id": 101299, "title": "Los Juegos del Hambre", "imgUrl": "https://image.tmdb.org/t/p/original/oxnKI1qiHz7xC0mNthC7dSqTcot.jpg", "trailerUrl": "https://www.youtube.com/embed/0KKwAWsh9TQ" },
+            { "id": 118, "title": "Titanic", "imgUrl": "https://image.tmdb.org/t/p/original/VMOt5scbGmBKDvkfHjZN6Ki54i.jpg", "trailerUrl": "https://www.youtube.com/embed/tA_qMdzvCvk" },
+            { "id": 13, "title": "Forrest Gump", "imgUrl": "https://image.tmdb.org/t/p/original/azV6hV99lYkdhydsQbJCI6FqMl4.jpg", "trailerUrl": "https://www.youtube.com/embed/aSEPD9w_dLM" }
+        ]
     },
     {
-      "id": 6,
-      "name": "Giftcard Steam",
-      "description": "Crédito para tu cuenta de Steam.",
-      "usdPrice": 0,
-      "stock": true,
-      "imgUrl": "https://i.imgur.com/jUvX3iM.png",
-      "type": "giftcard",
-      "details": "Compra una tarjeta de regalo digital para tu cuenta de Steam, disponible en varias denominaciones.",
-      "prices": [
-        {
-          "denomination": 5,
-          "realPrice": 5.00
-        },
-        {
-          "denomination": 10,
-          "realPrice": 10.00
-        },
-        {
-          "denomination": 20,
-          "realPrice": 20.00
-        }
-      ]
+        "id": 6,
+        "name": "Flujo TV",
+        "usdPrice": 0,
+        "imgUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpTOsy_182EgViE_H_VWL1cslDFH-ETQWBqQ&s",
+        "description": "(Precio x 30 dias)",
+        "stock": false,
+        "productType": "streaming",
+        "suggestions": [
+            { "id": 694, "title": "El Resplandor", "imgUrl": "https://image.tmdb.org/t/p/original/p9hqo2JWhBytLxskz4FBKcP2e1k.jpg", "trailerUrl": "https://www.youtube.com/embed/HEkYxS5P8bY" },
+            { "id": 550, "title": "El Club de la Pelea", "imgUrl": "https://image.tmdb.org/t/p/original/fGkVDmJgrfvLtrDtYlCxwlkkSNY.jpg", "trailerUrl": "https://www.youtube.com/embed/BdJ79y9j-oE" },
+            { "id": 274, "title": "El Silencio de los Corderos", "imgUrl": "https://image.tmdb.org/t/p/original/jrzX7TCmoD5gedFeqb1iB9sBaSn.jpg", "trailerUrl": "https://www.youtube.com/embed/jJqY1u4q4eI" },
+            { "id": 539, "title": "Psicosis", "imgUrl": "https://image.tmdb.org/t/p/original/4dDLqkXpb6d9mQKyI7t13qdyzcD.jpg", "trailerUrl": "https://www.youtube.com/embed/NG3-ryYvXbI" }
+        ]
     },
     {
-      "id": 7,
-      "name": "Giftcard Playstation",
-      "description": "Recarga tu monedero de Playstation Network.",
-      "usdPrice": 0,
-      "stock": true,
-      "imgUrl": "https://i.imgur.com/E5uP6yS.png",
-      "type": "giftcard",
-      "details": "Recarga tu monedero virtual para adquirir juegos, DLCs y más en la PlayStation Store.",
-      "prices": [
-        {
-          "denomination": 5,
-          "realPrice": 5.00
-        },
-        {
-          "denomination": 10,
-          "realPrice": 10.00
-        },
-        {
-          "denomination": 20,
-          "realPrice": 20.00
-        }
-      ]
+        "id": 7,
+        "name": "Crunchyroll",
+        "usdPrice": 2,
+        "imgUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Crunchyroll_logo_2018_vertical.png",
+        "description": "(Precio x 30 dias)",
+        "stock": true,
+        "productType": "streaming",
+        "suggestions": [
+            { "id": 129, "title": "El Viaje de Chihiro", "imgUrl": "https://image.tmdb.org/t/p/original/laXrmaTRuroArSPfsGlvTbeWxVA.jpg", "trailerUrl": "https://www.youtube.com/embed/5Fgq4Osh6XQ" },
+            { "id": 149, "title": "Akira", "imgUrl": "https://image.tmdb.org/t/p/original/vjPt8HYymLOkRv82x9JwVO7M2a5.jpg", "trailerUrl": "https://www.youtube.com/embed/SQ_hhKhrABs" },
+            { "id": 372058, "title": "Your Name", "imgUrl": "https://image.tmdb.org/t/p/original/iaiy3tg9QVkDpObm1IGqmbC9A5C.jpg", "trailerUrl": "https://www.youtube.com/embed/N0nvoAv5q8M" },
+            { "id": 1311031, "title": "Guardianes de la Noche: Kimetsu no Yaiba", "imgUrl": "https://image.tmdb.org/t/p/original/6N21gcFbhT4ocdTU4MGREAaM5Vz.jpg", "trailerUrl": "https://www.youtube.com/embed/7wUN1ovta_c" }
+        ]
     },
     {
-      "id": 8,
-      "name": "Giftcard Xbox",
-      "description": "Saldo para tu cuenta de Xbox.",
-      "usdPrice": 0,
-      "stock": true,
-      "imgUrl": "https://i.imgur.com/E5uP6yS.png",
-      "type": "giftcard",
-      "details": "Compra juegos, complementos y más en la tienda de Xbox con estas tarjetas de regalo digitales.",
-      "prices": [
-        {
-          "denomination": 5,
-          "realPrice": 5.00
-        },
-        {
-          "denomination": 10,
-          "realPrice": 10.00
-        },
-        {
-          "denomination": 20,
-          "realPrice": 20.00
-        }
-      ]
+        "id": 8,
+        "name": "Vix",
+        "usdPrice": 2,
+        "imgUrl": "https://i.pinimg.com/736x/9e/9a/e9/9e9ae9ca207ea166c3d5c4f1ad9ffe1f.jpg",
+        "description": "(Precios x 30 dias)",
+        "stock": true,
+        "productType": "streaming",
+        "suggestions": [
+            { "id": 670864, "title": "La Bamba", "imgUrl": "https://image.tmdb.org/t/p/original/fiByqrT5qqkEZKUWUdomgABPa4x.jpg", "trailerUrl": "https://www.youtube.com/embed/OaEWHrwF0fc" },
+            { "id": 1391, "title": "Y tu mamá también", "imgUrl": "https://image.tmdb.org/t/p/original/izw41PkE8y891yraO6fN1tCNmOG.jpg", "trailerUrl": "https://www.youtube.com/embed/inc0vS58ZKg" },
+            { "id": 211954, "title": "No se aceptan devoluciones", "imgUrl": "https://image.tmdb.org/t/p/original/5h4UApKNe62K8hoUCc151kQ56Uc.jpg", "trailerUrl": "https://www.youtube.com/embed/Ua5qcs7RHiY" },
+            { "id": 833971, "title": "La Casa de las Flores", "imgUrl": "https://image.tmdb.org/t/p/original/t8ZE8klqFhyvqzLb2qLpzFAJEhj.jpg", "trailerUrl": "https://www.youtube.com/embed/-HMAMDxyNgw" }
+        ]
+    },
+    {
+        "id": 9,
+        "name": "Spotify",
+        "usdPrice": 4,
+        "imgUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/2048px-Spotify_logo_without_text.svg.png",
+        "description": "(Precios x 30 dias)",
+        "stock": true,
+        "productType": "streaming",
+        "suggestions": []
+    },
+    {
+        "id": 10,
+        "name": "Canva",
+        "usdPrice": 0,
+        "imgUrl": "https://www.pngmart.com/files/23/Canva-Logo-PNG-File.png",
+        "description": "(Precio x 30 dias)",
+        "stock": false,
+        "productType": "streaming",
+        "suggestions": []
+    },
+    {
+        "id": 11,
+        "name": "Giftcard PlayStation",
+        "usdPrice": 0,
+        "imgUrl": "https://i.imgur.com/uRj0p6n.png",
+        "description": "Tarjeta de regalo con saldo para la PlayStation Store. Válida para compras de juegos, complementos y más.",
+        "stock": true,
+        "productType": "giftcard",
+        "pricingOptions": [
+            { "value": 10, "realPrice": 12.50 },
+            { "value": 20, "realPrice": 25.00 },
+            { "value": 50, "realPrice": 60.00 },
+            { "value": 100, "realPrice": 115.00 }
+        ]
     }
 ]
