@@ -992,15 +992,14 @@
 
             const fetchDollarRate = async () => {
                 try {
-                    const version = new Date().getTime();
-                    const tasaUrl = `https://pydolarvenezuela-api.vercel.app/api/v1/dollar/bcv?v=${version}`;
+                    const tasaUrl = `https://open.er-api.com/v6/latest/USD`;
                     const response = await fetch(tasaUrl);
                     if (!response.ok) {
                         throw new Error(`Error al cargar la tasa: ${response.status}`);
                     }
                     const data = await response.json();
-                    if (data && data.price) {
-                        dollarRate = parseFloat(data.price);
+                    if (data && data.rates && data.rates.VES) {
+                        dollarRate = parseFloat(data.rates.VES);
                         if (!isNaN(dollarRate)) {
                             document.getElementById('dollar-rate-display').innerText = dollarRate.toFixed(2);
                             updatePrices();
