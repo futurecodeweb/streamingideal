@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "name": "Netflix", 
+        "name": "Netflix",
         "usdPrice": 3.99,
         "imgUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Netflix_icon.svg/1024px-Netflix_icon.svg.png",
         "description": "(Precios x 30 dias)",
@@ -10,7 +10,7 @@
         "suggestions": [
             { "id": 987686, "title": "Asunto familiar", "imageUrl": "https://pics.filmaffinity.com/a_family_affair-639912317-large.jpg", "trailerUrl": "https://www.youtube.com/embed/CZEidEzNIQs?si=pNUHU6QpIn2tXHXE" },
             { "id": 229221, "title": "Mi querida niña", "imageUrl": "https://image.tmdb.org/t/p/original/dmyJoPy8iiwDKy683EjRTSiARlg.jpg", "trailerUrl": "https://www.youtube.com/embed/2OuhtUy-BGs?si=1RxOPZu5iJmYshX5" },
-            { "id": 426063, "title": "Nosferatu", "imageUrl": "https://m.media-amazon.com/images/M/MV5BY2FhZGE3NmEtNWJjOC00NDI1LWFhMTQtMjcxNmQzZmEwNGIzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", "trailerUrl": "https://www.youtube.com/embed/iEbp8QMGzP0?si=z4mt3ZRJ0qSJAYKO" },
+            { "id": 426063, "title": "Nosferatu", "imageUrl": "https://m.media-amazon.com/images/M/MV5BY2FhZ2U3NmEtNWJjOC00NDI1LWFhMTQtMjcxNmQzZmEwNGIzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", "trailerUrl": "https://www.youtube.com/embed/iEbp8QMGzP0?si=z4mt3ZRJ0qSJAYKO" },
             { "id": 1104845, "title": "Plankton: La pelicula", "imageUrl": "https://i.imgur.com/H4ghC9b.jpeg", "trailerUrl": "https://www.youtube.com/embed/eU0WIo3lAoo?si=YC2rPkwKDDZ8e7C8" }
         ]
     },
@@ -22,7 +22,7 @@
         "description": "(Precio x 30 dias)",
         "stock": true,
         "type": "streaming",
-        "suggestions": [
+        "suggestions": [ 
             { "id": 1022796, "title": "Deadpool & Wolverine", "imageUrl": "https://image.tmdb.org/t/p/original/6aY3OzCIdxoBMYdiH5s17rWFFFA.jpg", "trailerUrl": "https://www.youtube.com/embed/UzFZR2dRsSY?si=wrFOcYhlFV15J427" },
             { "id": 1025537, "title": "Intensamente 2", "imageUrl": "https://image.tmdb.org/t/p/original/4HEJdpcmTGm3BWWic31G4aCnuC6.jpg", "trailerUrl": "https://www.youtube.com/embed/xiC2iXTXHxw?si=gQZpFSvH2uYleFxM" },
             { "id": 260513, "title": "Los Increíbles 2", "imageUrl": "https://image.tmdb.org/t/p/original/bJjc0217DuipdwJ0wyi3I4j6soR.jpg", "trailerUrl": "https://www.youtube.com/embed/6RBr1v9_umA?si=JC6t5qgIbGHaB9QL" },
@@ -71,7 +71,7 @@
             { "id": 27205, "title": "Inception", "imageUrl": "https://image.tmdb.org/t/p/original/tXQvtRWfkUUnWJAn2tN3jERIUG.jpg", "trailerUrl": "https://www.youtube.com/embed/RV9L7ui9Cn8?si=PI_ZgMqj2Z7ewDrk" },
             { "id": 101299, "title": "Los Juegos del Hambre", "imageUrl": "https://image.tmdb.org/t/p/original/oxnKI1qiHz7xC0mNthC7dSqTcot.jpg", "trailerUrl": "https://www.youtube.com/embed/0KKwAWsh9TQ?si=KSePSCvYnIZ1qKUt" },
             { "id": 118, "title": "Titanic", "imageUrl": "https://image.tmdb.org/t/p/original/VMOt5scbGmBKDvkfHjZN6Ki54i.jpg", "trailerUrl": "https://www.youtube.com/embed/tA_qMdzvCvk?si=Oy5ZpyPOF6dOOb2O" },
-            { "id": 13, "title": "Forrest Gump", "imageUrl": "https://image.tmdb.org/t/p/original/azV6hV99lYkdhydsQbJ-ML4.jpg", "trailerUrl": "https://www.youtube.com/embed/aSEPD9w_dLM?si=sR4g2VXsL-uEjI2S" }
+            { "id": 13, "title": "Forrest Gump", "imageUrl": "https://image.tmdb.org/t/p/original/azV6hV99lYkdhydsQbJCI6FqMl4.jpg", "trailerUrl": "https://www.youtube.com/embed/aSEPD9w_dLM?si=sR4g2VXsL-uEjI2S" }
         ]
     },
     {
@@ -136,62 +136,29 @@
         "imgUrl": "https://www.pngmart.com/files/23/Canva-Logo-PNG-File.png",
         "description": "(Precio x 30 dias)",
         "stock": false,
-        "type": "streaming",
-        "suggestions": []
+        "type": "giftcard",
+        "prices": [
+            { "denomination": 5, "realPrice": 6.50 },
+            { "denomination": 10, "realPrice": 12.50 },
+            { "denomination": 25, "realPrice": 28.00 },
+            { "denomination": 50, "realPrice": 55.00 }
+        ],
+        "details": "Puedes canjear esta tarjeta de regalo por un saldo en tu cuenta de Canva. El saldo puede ser utilizado para comprar planes Pro, elementos premium, o para pagar suscripciones."
     },
     {
         "id": 11,
-        "name": "Giftcard Steam",
+        "name": "Gift Card",
         "usdPrice": 0,
-        "imgUrl": "https://store.cloudflare.steamstatic.com/public/images/gift/steamcard_500x300.png",
-        "description": "Tarjeta de regalo para juegos y software en Steam.",
+        "imgUrl": "https://i.imgur.com/rL7S07V.png",
+        "description": "Tarjeta de regalo universal",
         "stock": true,
         "type": "giftcard",
-        "amounts": [10, 20, 50],
-        "details": "Con la Giftcard de Steam, puedes recargar saldo en tu cuenta para comprar juegos, software y contenido adicional en la plataforma de PC más grande del mundo."
-    },
-    {
-        "id": 12,
-        "name": "Giftcard Play Station",
-        "usdPrice": 0,
-        "imgUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Playstation_Giftcard_Image.jpg",
-        "description": "Tarjeta de regalo para juegos y contenido de la PS Store.",
-        "stock": true,
-        "type": "giftcard",
-        "amounts": [10, 20, 50],
-        "details": "Compra juegos, complementos, suscripciones a PlayStation Plus y más en la PlayStation Store. La Giftcard es el regalo ideal para cualquier gamer."
-    },
-    {
-        "id": 13,
-        "name": "Giftcard Xbox",
-        "usdPrice": 0,
-        "imgUrl": "https://media.gamestop.com/i/gamestop/10182442/Microsoft-Xbox-Gift-Card-Digital-Code",
-        "description": "Tarjeta de regalo para juegos y aplicaciones en Xbox.",
-        "stock": true,
-        "type": "giftcard",
-        "amounts": [10, 20, 50],
-        "details": "Con la Giftcard de Xbox, puedes comprar los juegos más recientes, DLC, películas, programas de televisión y más. Es tu pase directo a la diversión."
-    },
-    {
-        "id": 14,
-        "name": "Giftcard Nintendo",
-        "usdPrice": 0,
-        "imgUrl": "https://www.nintendo.es/store/images/giftcard-hero.jpg",
-        "description": "Tarjeta de regalo para la tienda de Nintendo.",
-        "stock": true,
-        "type": "giftcard",
-        "amounts": [10, 20, 50],
-        "details": "Agrega fondos a tu cuenta de Nintendo eShop con una Giftcard. Canjea el código en tu consola Nintendo Switch para comprar juegos descargables y contenido."
-    },
-    {
-        "id": 15,
-        "name": "Giftcard Google Play",
-        "usdPrice": 0,
-        "imgUrl": "https://images.oficial.cl/11488-large_default/gift-card-google-play.jpg",
-        "description": "Tarjeta de regalo para la tienda de Google.",
-        "stock": true,
-        "type": "giftcard",
-        "amounts": [10, 20, 50],
-        "details": "Compra tus aplicaciones, juegos, películas y libros favoritos en Google Play Store. ¡Disfruta de la mejor experiencia de entretenimiento en tu dispositivo Android!"
+        "prices": [
+            { "denomination": 10, "realPrice": 12.50 },
+            { "denomination": 15, "realPrice": 17.50 },
+            { "denomination": 20, "realPrice": 22.50 },
+            { "denomination": 50, "realPrice": 55.00 }
+        ],
+        "details": "La Gift Card es una tarjeta de regalo universal que puede ser usada para múltiples plataformas. El saldo es canjeable en el servicio que prefieras. Elige el monto que deseas y completa tu compra."
     }
 ]
