@@ -82,12 +82,7 @@
         "description": "(Precio x 30 dias)",
         "stock": false,
         "productType": "streaming",
-        "suggestions": [
-            { "id": 694, "title": "El Resplandor", "imgUrl": "https://image.tmdb.org/t/p/original/p9hqo2JWhBytLxskz4FBKcP2e1k.jpg", "trailerUrl": "https://www.youtube.com/embed/HEkYxS5P8bY" },
-            { "id": 550, "title": "El Club de la Pelea", "imgUrl": "https://image.tmdb.org/t/p/original/fGkVDmJgrfvLtrDtYlCxwlkkSNY.jpg", "trailerUrl": "https://www.youtube.com/embed/BdJ79y9j-oE" },
-            { "id": 274, "title": "El Silencio de los Corderos", "imgUrl": "https://image.tmdb.org/t/p/original/jrzX7TCmoD5gedFeqb1iB9sBaSn.jpg", "trailerUrl": "https://www.youtube.com/embed/jJqY1u4q4eI" },
-            { "id": 539, "title": "Psicosis", "imgUrl": "https://image.tmdb.org/t/p/original/4dDLqkXpb6d9mQKyI7t13qdyzcD.jpg", "trailerUrl": "https://www.youtube.com/embed/NG3-ryYvXbI" }
-        ]
+        "suggestions": []
     },
     {
         "id": 7,
