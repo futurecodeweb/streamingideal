@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -138,10 +138,15 @@
 
         /* Contenedor principal */
         .main-content {
-            width: 90%;
+            width: 80%;
             margin: auto;
             overflow: hidden;
-            padding: 20px 0;
+            padding: 20px;
+        }
+        .product-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
         }
         .exchange-rate-info {
             grid-column: 1 / -1;
@@ -153,46 +158,6 @@
             font-weight: bold;
             border-radius: 8px;
             animation: floating 3s ease-in-out infinite;
-        }
-
-        .product-section {
-            margin-bottom: 30px;
-        }
-        .product-section h2 {
-            text-align: center;
-            font-size: 2em;
-            margin-bottom: 20px;
-            color: #333;
-        }
-
-        /* Carrusel de productos */
-        .carousel-container {
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        .product-carousel {
-            display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch;
-            padding: 20px 0;
-            gap: 20px;
-        }
-        .product-carousel::-webkit-scrollbar {
-            height: 8px;
-        }
-        .product-carousel::-webkit-scrollbar-thumb {
-            background-color: #888;
-            border-radius: 4px;
-        }
-        .product-carousel::-webkit-scrollbar-track {
-            background-color: #f4f4f4;
-        }
-        .product-carousel .product {
-            flex: 0 0 280px;
-            scroll-snap-align: start;
         }
 
         /* Sección de productos */
@@ -782,44 +747,70 @@
             height: 100%;
         }
 
-        /* Modal para elegir monto de Giftcard */
-        .select-amount-modal .modal-content {
+        /* Modal de detalles de producto (Giftcards) */
+        #details-modal .modal-content {
             text-align: center;
         }
-        .amount-buttons-container {
+        #details-modal img {
+            max-width: 100px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+        #details-modal h2 {
+            margin-top: 0;
+        }
+        .price-options-container {
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
             gap: 10px;
             margin: 20px 0;
         }
-        .amount-button {
-            background-color: #3498db;
-            color: white;
-            border: none;
+        .price-option-button {
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
             padding: 10px 20px;
             border-radius: 5px;
+            font-size: 1.1em;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, border-color 0.3s;
         }
-        .amount-button:hover {
-            background-color: #2980b9;
+        .price-option-button.selected {
+            background-color: #3498db;
+            color: white;
+            border-color: #2980b9;
         }
-        .amount-button.selected {
-            background-color: #2ecc71;
-            box-shadow: 0 0 10px rgba(46, 204, 113, 0.5);
+        .price-option-button:hover {
+            background-color: #e0e0e0;
         }
-        .add-giftcard-to-cart {
-            background-color: #e67e22;
+        .add-to-cart-details-button {
+            background-color: #27ae60;
             color: white;
             border: none;
-            padding: 12px 25px;
+            padding: 12px 24px;
             border-radius: 5px;
+            font-size: 1.1em;
             cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
             transition: background-color 0.3s;
+        }
+        .add-to-cart-details-button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        .add-to-cart-details-button:hover:not(:disabled) {
+            background-color: #229954;
+        }
+        .details-price {
+            font-size: 1.5em;
+            color: #e67e22;
+            font-weight: bold;
             margin-top: 10px;
         }
-        .add-giftcard-to-cart:hover {
-            background-color: #d35400;
+        .details-price-bs {
+            font-size: 1em;
+            color: #555;
         }
 
         /* Animaciones y Media Queries */
@@ -875,19 +866,7 @@
             Tasa dólar BCV hoy: <span id="dollar-rate-display"></span> Bs
         </div>
 
-        <section class="product-section">
-            <h2>Plataformas de Streaming</h2>
-            <div class="carousel-container">
-                <div class="product-carousel" id="streaming-carousel"></div>
-            </div>
-        </section>
-
-        <section class="product-section">
-            <h2>Giftcards</h2>
-            <div class="carousel-container">
-                <div class="product-carousel" id="giftcard-carousel"></div>
-            </div>
-        </section>
+        <section class="product-container" id="product-container"></section>
     </main>
 
     <footer class="footer">
@@ -994,22 +973,17 @@
         </div>
     </div>
 
-    <div id="giftcard-amount-modal" class="modal select-amount-modal">
+    <div id="details-modal" class="modal">
         <div class="modal-content">
-            <span class="close-button" onclick="closeGiftcardAmountModal()">&times;</span>
-            <h2 id="giftcard-amount-title"></h2>
-            <p>Selecciona el monto de tu Giftcard:</p>
-            <div class="amount-buttons-container" id="giftcard-amount-buttons"></div>
-            <button class="add-giftcard-to-cart" id="add-giftcard-button" disabled>Añadir al Carrito</button>
-        </div>
-    </div>
-
-    <div id="product-details-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-button" onclick="closeProductDetailsModal()">&times;</span>
-            <h2 id="details-product-title"></h2>
-            <img id="details-product-image" src="" alt="Producto">
-            <p id="details-product-details"></p>
+            <span class="close-button" onclick="closeDetailsModal()">&times;</span>
+            <img src="" alt="" id="details-product-img">
+            <h2 id="details-product-name"></h2>
+            <p id="details-product-description"></p>
+            <h3>Selecciona una opción:</h3>
+            <div class="price-options-container" id="price-options-container"></div>
+            <p class="details-price">Precio real: $ <span id="details-price-usd">0.00</span></p>
+            <p class="details-price-bs">Bs <span id="details-price-bs">0.00</span></p>
+            <button class="add-to-cart-details-button" id="add-to-cart-details-button" disabled>Añadir al carrito</button>
         </div>
     </div>
 
@@ -1021,8 +995,7 @@
             const whatsappNumber = '584129386149';
             let cart = [];
             let selectedPaymentMethod = '';
-            let selectedGiftcard = null;
-            let selectedGiftcardAmount = 0;
+            let selectedGiftcardPrice = null;
 
             let currentSlide = 0;
             const tmdbApiKey = '65aa5b7946592f4674d9d2115569d584';
@@ -1033,7 +1006,7 @@
             const fetchDollarRate = async () => {
                 try {
                     const version = new Date().getTime();
-                    const tasaUrl = `https://futurecodeweb.github.io/tasabcv/?v=${version}`;
+                    const tasaUrl = `https://streamingideal.github.io/tasabcv/?v=${version}`;
                     const response = await fetch(tasaUrl);
                     const htmlText = await response.text();
                     const parser = new DOMParser();
@@ -1071,24 +1044,17 @@
                     fetchDollarRate();
                 } catch (error) {
                     console.error('No se pudo cargar el archivo de productos:', error);
-                    document.getElementById('streaming-carousel').innerHTML = '<p style="text-align:center;">Error al cargar los productos. Por favor, inténtelo de nuevo más tarde.</p>';
-                    document.getElementById('giftcard-carousel').innerHTML = '<p style="text-align:center;">Error al cargar los productos. Por favor, inténtelo de nuevo más tarde.</p>';
+                    document.getElementById('product-container').innerHTML = '<p style="text-align:center;">Error al cargar los productos. Por favor, inténtelo de nuevo más tarde.</p>';
                 }
             };
 
             const renderProducts = () => {
-                const streamingCarousel = document.getElementById('streaming-carousel');
-                const giftcardCarousel = document.getElementById('giftcard-carousel');
-                streamingCarousel.innerHTML = '';
-                giftcardCarousel.innerHTML = '';
-
-                const streamingProducts = products.filter(p => p.type === 'streaming');
-                const giftcardProducts = products.filter(p => p.type === 'giftcard');
-
-                streamingProducts.forEach(product => {
+                const productContainer = document.getElementById('product-container');
+                productContainer.innerHTML = '';
+                products.forEach(product => {
                     const productDiv = document.createElement('div');
                     productDiv.classList.add('product');
-                    if (!product.stock) {
+                    if (product.stock === false) {
                         productDiv.classList.add('out-of-stock');
                     }
                     productDiv.setAttribute('data-product-name', product.name);
@@ -1099,93 +1065,78 @@
                         <p class="price" data-usd-price="${product.usdPrice}">${product.stock ? `$${product.usdPrice}` : 'SIN STOCK'}</p>
                         <p class="price-bs">Bs <span id="price-bs-${product.id}">0.00</span></p>
                         <div class="product-buttons">
-                            <button class="add-to-cart-button" onclick="addToCart(${product.id})" ${!product.stock ? 'disabled' : ''}>Añadir al carrito</button>
-                            <button class="view-details-button" onclick="showSuggestionsModal('${product.name}')" ${!product.stock ? 'disabled' : ''}>Sugerencias</button>
+                            <button class="add-to-cart-button" onclick="handleAddToCartClick(${product.id})" ${product.stock ? '' : 'disabled'}>Añadir al carrito</button>
+                            ${product.type === 'streaming' ?
+                                `<button class="view-details-button" onclick="showSuggestionsModal('${product.name}')" ${product.stock ? '' : 'disabled'}>Sugerencias</button>` :
+                                `<button class="view-details-button" onclick="showDetailsModal(${product.id})" ${product.stock ? '' : 'disabled'}>Detalles</button>`
+                            }
                         </div>
                     `;
-                    streamingCarousel.appendChild(productDiv);
+                    productContainer.appendChild(productDiv);
                 });
+            };
 
-                giftcardProducts.forEach(product => {
-                    const productDiv = document.createElement('div');
-                    productDiv.classList.add('product');
-                    if (!product.stock) {
-                        productDiv.classList.add('out-of-stock');
-                    }
-                    productDiv.setAttribute('data-product-name', product.name);
-                    productDiv.innerHTML = `
-                        <img src="${product.imgUrl}" alt="${product.name}">
-                        <h3>${product.name}</h3>
-                        <p>${product.description}</p>
-                        <p class="price" data-usd-price="${product.usdPrice}">${product.stock ? 'Desde $' + product.amounts[0] : 'SIN STOCK'}</p>
-                        <p class="price-bs">Bs <span id="price-bs-${product.id}">0.00</span></p>
-                        <div class="product-buttons">
-                            <button class="add-to-cart-button" onclick="showGiftcardAmountModal(${product.id})" ${!product.stock ? 'disabled' : ''}>Añadir al carrito</button>
-                            <button class="view-details-button" onclick="showProductDetails(${product.id})" ${!product.stock ? 'disabled' : ''}>Detalles</button>
-                        </div>
-                    `;
-                    giftcardCarousel.appendChild(productDiv);
-                });
+            const handleAddToCartClick = (productId) => {
+                const product = products.find(p => p.id === productId);
+                if (product.type === 'streaming') {
+                    addToCart(productId);
+                }
             };
 
             const updatePrices = () => {
                 products.forEach(product => {
-                    if (product.type === 'streaming') {
+                    const priceElement = document.getElementById(`price-bs-${product.id}`);
+                    if (priceElement && product.usdPrice > 0) {
                         const bsPrice = (product.usdPrice * dollarRate).toFixed(2);
-                        const bsPriceElement = document.getElementById(`price-bs-${product.id}`);
-                        if (bsPriceElement) {
-                            bsPriceElement.innerText = bsPrice;
-                        }
+                        priceElement.innerText = bsPrice;
                     }
                 });
                 updateCartUI();
+                if (document.getElementById('details-modal').style.display === 'block' && selectedGiftcardPrice) {
+                    updateDetailsModalPrice(selectedGiftcardPrice.realPrice);
+                }
             };
 
             const filterProducts = (event) => {
                 const searchTerm = searchInput.value.toLowerCase();
-                const allProductElements = document.querySelectorAll('.product-carousel .product');
+                const productElements = document.querySelectorAll('.product');
                 const exchangeRateInfo = document.querySelector('.exchange-rate-info');
-            
+
                 if (searchTerm.length > 0) {
                     exchangeRateInfo.style.display = 'none';
-                    allProductElements.forEach(productEl => {
-                        const productName = productEl.getAttribute('data-product-name').toLowerCase();
-                        if (productName.includes(searchTerm)) {
-                            productEl.style.display = 'flex';
-                        } else {
-                            productEl.style.display = 'none';
-                        }
-                    });
                 } else {
                     exchangeRateInfo.style.display = 'block';
-                    allProductElements.forEach(productEl => {
-                        productEl.style.display = 'flex';
-                    });
                 }
+
+                productElements.forEach(productEl => {
+                    const productName = productEl.getAttribute('data-product-name').toLowerCase();
+                    if (productName.includes(searchTerm)) {
+                        productEl.style.display = 'flex';
+                    } else {
+                        productEl.style.display = 'none';
+                    }
+                });
             };
-            
-            const addToCart = (productId, amount = null) => {
+
+            const addToCart = (productId, selectedPrice = null) => {
                 const product = products.find(p => p.id === productId);
                 if (product && product.stock) {
+                    let itemToAdd = { ...product };
                     let itemName = product.name;
                     let itemPrice = product.usdPrice;
-                    
-                    if (product.type === 'giftcard' && amount) {
-                        itemName += ` ($${amount})`;
-                        itemPrice = amount;
+
+                    if (selectedPrice) {
+                        itemToAdd.usdPrice = selectedPrice.realPrice;
+                        itemToAdd.denomination = selectedPrice.denomination;
+                        itemName = `${product.name} (${selectedPrice.denomination}$)`;
+                        itemPrice = selectedPrice.realPrice;
                     }
-            
-                    const existingItem = cart.find(item => item.name === itemName);
+
+                    const existingItem = cart.find(item => item.id === itemToAdd.id && item.denomination === itemToAdd.denomination);
                     if (existingItem) {
                         existingItem.quantity++;
                     } else {
-                        cart.push({
-                            id: productId,
-                            name: itemName,
-                            usdPrice: itemPrice,
-                            quantity: 1,
-                            type: product.type
-                        });
+                        cart.push({ ...itemToAdd, quantity: 1, name: itemName, usdPrice: itemPrice });
                     }
                     saveCartToStorage();
                     updateCartUI();
@@ -1196,12 +1147,12 @@
                 }
             };
 
-            const updateCartItemQuantity = (itemName, change) => {
-                const item = cart.find(p => p.name === itemName);
+            const updateCartItemQuantity = (itemId, change) => {
+                const item = cart.find(p => p.id === itemId);
                 if (item) {
                     item.quantity += change;
                     if (item.quantity <= 0) {
-                        cart = cart.filter(p => p.name !== itemName);
+                        cart = cart.filter(p => p.id !== itemId);
                     }
                     saveCartToStorage();
                     updateCartUI();
@@ -1236,18 +1187,18 @@
                     clearCartButton.disabled = false;
                     selectPaymentButton.disabled = false;
                     cart.forEach(item => {
-                        const li = document.createElement('li');
                         const subtotalUSD = item.usdPrice * item.quantity;
                         const subtotalBS = (subtotalUSD * dollarRate).toFixed(2);
+                        const li = document.createElement('li');
                         li.innerHTML = `
                             <div class="cart-item-info">
                                 <span>${item.name} (${item.quantity})</span>
                                 <span class="item-price">$${subtotalUSD.toFixed(2)} (Bs ${subtotalBS})</span>
                             </div>
                             <div class="quantity-control">
-                                <button onclick="updateCartItemQuantity('${item.name}', -1)">-</button>
+                                <button onclick="updateCartItemQuantity(${item.id}, -1)">-</button>
                                 <span>${item.quantity}</span>
-                                <button onclick="updateCartItemQuantity('${item.name}', 1)">+</button>
+                                <button onclick="updateCartItemQuantity(${item.id}, 1)">+</button>
                             </div>
                         `;
                         cartItemsList.appendChild(li);
@@ -1335,6 +1286,18 @@
                 }, 3000);
             };
 
+            const toggleFixedButtons = (show) => {
+                const buttons = document.querySelectorAll('.fixed-button');
+                buttons.forEach(button => {
+                    if (show) {
+                        button.classList.remove('hidden');
+                    } else {
+                        button.classList.add('hidden');
+                    }
+                });
+            };
+
+            // MODALES GENERALES
             const toggleSocialMenu = () => {
                 const socialMenu = document.getElementById('social-menu');
                 socialMenu.style.display = socialMenu.style.display === 'block' ? 'none' : 'block';
@@ -1353,30 +1316,12 @@
                 document.getElementById('payment-methods-modal').style.display = 'none';
             };
 
-            const launchConfetti = () => {
-                confetti({
-                    particleCount: 100,
-                    spread: 70,
-                    origin: { y: 0.6 }
-                });
-            };
-
-            const toggleFixedButtons = (show) => {
-                const buttons = document.querySelectorAll('.fixed-button');
-                buttons.forEach(button => {
-                    if (show) {
-                        button.classList.remove('hidden');
-                    } else {
-                        button.classList.add('hidden');
-                    }
-                });
-            };
-
+            // MODAL DE SUGERENCIAS
             const showSuggestionsModal = (serviceName) => {
                 const modal = document.getElementById('suggestions-modal');
                 const title = document.getElementById('suggestions-title');
                 const product = products.find(p => p.name === serviceName);
-                if (!product || !product.suggestions) {
+                if (!product || !product.suggestions || product.type !== 'streaming') {
                     console.error("No se encontraron sugerencias para este servicio.");
                     return;
                 }
@@ -1455,87 +1400,88 @@
                 document.getElementById('synopsis-modal').style.display = 'none';
             };
 
-            // Función para mostrar el modal del tráiler
             const showTrailer = (movieTitle, trailerUrl) => {
                 const trailerModal = document.getElementById('trailer-modal');
                 const trailerTitle = document.getElementById('trailer-title');
                 const youtubePlayer = document.getElementById('youtube-player');
                 trailerTitle.innerText = `Tráiler de ${movieTitle}`;
-                youtubePlayer.src = trailerUrl + '?autoplay=1'; // El 'autoplay=1' lo reproduce automáticamente
+                youtubePlayer.src = trailerUrl + '?autoplay=1'; 
                 trailerModal.style.display = 'block';
             };
 
-            // Función para cerrar el modal del tráiler y detener el video
             const closeTrailer = () => {
                 const trailerModal = document.getElementById('trailer-modal');
                 const youtubePlayer = document.getElementById('youtube-player');
-                youtubePlayer.src = ''; // Detiene la reproducción
+                youtubePlayer.src = ''; 
                 trailerModal.style.display = 'none';
             };
 
-            const showMoviesCatalog = () => {
-                // Función no funcional para el usuario
-            };
-
-            // Funciones para Giftcards
-            const showGiftcardAmountModal = (productId) => {
-                selectedGiftcard = products.find(p => p.id === productId);
-                if (!selectedGiftcard) return;
-
-                const modal = document.getElementById('giftcard-amount-modal');
-                document.getElementById('giftcard-amount-title').innerText = selectedGiftcard.name;
-                const buttonsContainer = document.getElementById('giftcard-amount-buttons');
-                buttonsContainer.innerHTML = '';
-                
-                selectedGiftcard.amounts.forEach(amount => {
-                    const button = document.createElement('button');
-                    button.classList.add('amount-button');
-                    button.innerText = `$${amount}`;
-                    button.onclick = () => selectGiftcardAmount(amount, button);
-                    buttonsContainer.appendChild(button);
-                });
-                
-                document.getElementById('add-giftcard-button').disabled = true;
-                modal.style.display = 'block';
-            };
-
-            const closeGiftcardAmountModal = () => {
-                document.getElementById('giftcard-amount-modal').style.display = 'none';
-                selectedGiftcard = null;
-                selectedGiftcardAmount = 0;
-            };
-
-            const selectGiftcardAmount = (amount, button) => {
-                selectedGiftcardAmount = amount;
-                const allAmountButtons = document.querySelectorAll('.amount-button');
-                allAmountButtons.forEach(btn => btn.classList.remove('selected'));
-                button.classList.add('selected');
-                document.getElementById('add-giftcard-button').disabled = false;
-            };
-
-            const addGiftcardToCart = () => {
-                if (selectedGiftcard && selectedGiftcardAmount > 0) {
-                    addToCart(selectedGiftcard.id, selectedGiftcardAmount);
-                    closeGiftcardAmountModal();
-                }
-            };
-
-            const showProductDetails = (productId) => {
+            // NUEVOS MODALES PARA GIFTCARDS
+            const showDetailsModal = (productId) => {
                 const product = products.find(p => p.id === productId);
-                if (!product) return;
+                if (!product || product.type !== 'giftcard') return;
+
+                const detailsModal = document.getElementById('details-modal');
+                document.getElementById('details-product-img').src = product.imgUrl;
+                document.getElementById('details-product-img').alt = product.name;
+                document.getElementById('details-product-name').innerText = product.name;
+                document.getElementById('details-product-description').innerText = product.details;
                 
-                const modal = document.getElementById('product-details-modal');
-                document.getElementById('details-product-title').innerText = product.name;
-                document.getElementById('details-product-image').src = product.imgUrl;
-                document.getElementById('details-product-details').innerText = product.details;
-                modal.style.display = 'block';
+                const priceOptionsContainer = document.getElementById('price-options-container');
+                priceOptionsContainer.innerHTML = '';
+                product.prices.forEach(priceOption => {
+                    const button = document.createElement('button');
+                    button.classList.add('price-option-button');
+                    button.innerText = `$${priceOption.denomination}`;
+                    button.onclick = () => selectGiftcardPrice(priceOption, productId);
+                    priceOptionsContainer.appendChild(button);
+                });
+
+                document.getElementById('details-price-usd').innerText = '0.00';
+                document.getElementById('details-price-bs').innerText = '0.00';
+                document.getElementById('add-to-cart-details-button').disabled = true;
+
+                detailsModal.style.display = 'block';
+                toggleFixedButtons(false);
             };
 
-            const closeProductDetailsModal = () => {
-                document.getElementById('product-details-modal').style.display = 'none';
+            const closeDetailsModal = () => {
+                document.getElementById('details-modal').style.display = 'none';
+                selectedGiftcardPrice = null;
+                toggleFixedButtons(true);
             };
 
+            const selectGiftcardPrice = (priceOption, productId) => {
+                selectedGiftcardPrice = priceOption;
+                const allPriceButtons = document.querySelectorAll('.price-option-button');
+                allPriceButtons.forEach(btn => btn.classList.remove('selected'));
+                const selectedButton = Array.from(allPriceButtons).find(btn => btn.innerText.includes(`${priceOption.denomination}`));
+                if (selectedButton) {
+                    selectedButton.classList.add('selected');
+                }
+                
+                updateDetailsModalPrice(priceOption.realPrice);
+                document.getElementById('add-to-cart-details-button').disabled = false;
+                document.getElementById('add-to-cart-details-button').onclick = () => {
+                    addToCart(productId, selectedGiftcardPrice);
+                    closeDetailsModal();
+                };
+            };
 
+            const updateDetailsModalPrice = (usdPrice) => {
+                const bsPrice = (usdPrice * dollarRate).toFixed(2);
+                document.getElementById('details-price-usd').innerText = usdPrice.toFixed(2);
+                document.getElementById('details-price-bs').innerText = bsPrice;
+            };
+
+            const launchConfetti = () => {
+                confetti({
+                    particleCount: 100,
+                    spread: 70,
+                    origin: { y: 0.6 }
+                });
+            };
+            
             window.closeSplashScreen = closeSplashScreen;
             window.showCart = showCart;
             window.closeCart = closeCart;
@@ -1544,6 +1490,7 @@
             window.togglePaymentMethods = togglePaymentMethods;
             window.closePaymentMethods = closePaymentMethods;
             window.addToCart = addToCart;
+            window.handleAddToCartClick = handleAddToCartClick;
             window.updateCartItemQuantity = updateCartItemQuantity;
             window.clearCart = clearCart;
             window.filterProducts = filterProducts;
@@ -1556,16 +1503,12 @@
             window.closeTrailer = closeTrailer;
             window.showMoviesCatalog = showMoviesCatalog;
             window.selectPaymentMethod = selectPaymentMethod;
-            window.showGiftcardAmountModal = showGiftcardAmountModal;
-            window.closeGiftcardAmountModal = closeGiftcardAmountModal;
-            window.selectGiftcardAmount = selectGiftcardAmount;
-            window.showProductDetails = showProductDetails;
-            window.closeProductDetailsModal = closeProductDetailsModal;
+            window.showDetailsModal = showDetailsModal;
+            window.closeDetailsModal = closeDetailsModal;
+            window.selectGiftcardPrice = selectGiftcardPrice;
 
             loadCartFromStorage();
             fetchProducts();
-
-            document.getElementById('add-giftcard-button').addEventListener('click', addGiftcardToCart);
 
             document.getElementById('close-cart-modal').addEventListener('click', closeCart);
             document.getElementById('cart-modal').addEventListener('click', (e) => {
@@ -1598,14 +1541,9 @@
                     closeTrailer();
                 }
             });
-            document.getElementById('giftcard-amount-modal').addEventListener('click', (e) => {
-                if (e.target.id === 'giftcard-amount-modal') {
-                    closeGiftcardAmountModal();
-                }
-            });
-            document.getElementById('product-details-modal').addEventListener('click', (e) => {
-                if (e.target.id === 'product-details-modal') {
-                    closeProductDetailsModal();
+            document.getElementById('details-modal').addEventListener('click', (e) => {
+                if (e.target.id === 'details-modal') {
+                    closeDetailsModal();
                 }
             });
         });
